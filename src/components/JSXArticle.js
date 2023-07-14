@@ -1,9 +1,13 @@
 import React from "react";
-import styles from '@/styles/Home.module.css'
+import styles from '@/styles/Home.module.css';
 import ImageComponent from '@/components/ImageComponent';
 import JSX from '@/assets/JSXCoding.jpeg';
+import Code from '@/assets/JSX Code.png';
+import Output from '@/assets/JSX Code Output.png';
+import { useState } from 'react';
 
 function JSXArticle() {
+    const [imageToDisplay, setImageToDisplay] = useState(true);
     return (
         <div>
             <div className={styles.article}>
@@ -104,6 +108,23 @@ function JSXArticle() {
                 <br />
                 export default MyComponent;</p>
             </div>
+            <br />
+            <br />
+            <div className={styles.article}>
+                <h3>Here is a sample of a complete JSX Code and its output.</h3>
+            </div>
+            <br />
+            <br />
+            {imageToDisplay ? (
+                <button className={styles.btn} onClick={() => setImageToDisplay(false)}>Show Output</button>
+            ) : (
+                <button className={styles.btn} onClick={() => setImageToDisplay(true)}>Show Code</button>
+            )}
+            {imageToDisplay ? (
+                <ImageComponent srcImage = {Code} />
+            ) : (
+                <ImageComponent srcImage = {Output} />
+            )}
         </div>
     );
 };

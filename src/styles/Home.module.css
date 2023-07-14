@@ -32,6 +32,7 @@
   background-color: rgba(var(--callout-rgb), 0.5);
   border: 1px solid rgba(var(--callout-border-rgb), 0.3);
   border-radius: var(--border-radius);
+  text-align: center;
 }
 
 .article {
@@ -47,7 +48,13 @@
   font-size: 1.25rem;
 }
 
+.container{
+  display: flex;
+  justify-content: center;
+}
+
 .table {
+
   border: 2px solid white;
   font-family: var(--font-mono);
 }
@@ -64,6 +71,20 @@
 .table td{
   border: 2px solid white;
   padding: 1.5rem;
+}
+
+.btn {
+  width: 10rem;
+  border-radius: 1rem;
+}
+
+.btn:hover {
+  background-color: white;
+  color: black;
+}
+
+.btn:active {
+  transform: translateY(1px);
 }
 
 .image {
